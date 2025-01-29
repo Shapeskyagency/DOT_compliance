@@ -23,7 +23,7 @@ const ThreeTileCard = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-[60px]">
       {cardsData.map((card, index) => (
         <div key={index} className="flex justify-center">
           <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transform hover:translate-y-2 transition-all duration-300 ease-in-out w-full max-w-xs">

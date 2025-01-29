@@ -10,7 +10,7 @@ const MenuItem = ({ label, href, dropdown = false, children = null, isScrolled }
   return (
     <li className="relative">
       <button
-        className={`text-xl font-bold transition-all duration-300 ${
+        className={`text-[16px] font-bold transition-all duration-300 ${
           isScrolled ? "text-black" : "text-white"
         } hover:text-red-500`}
         onClick={() => dropdown && setShowDropdown(!showDropdown)}
@@ -52,11 +52,11 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`fixed z-[999] w-[100%] transition-all duration-300 ${
+      className={`fixed z-[999] w-[100%] transition-all duration-300 border-b-[1px] border-[#fbfbfb] border-opacity-30 ${
         isScrolled ? "bg-white shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex justify-between items-center p-4">
+      <div className="container mx-auto flex justify-between items-center p-4 py-2">
         {/* Logo */}
         <Link href="/">
           <img src="/logo.png" alt="Logo" className="h-20 w-auto" />
@@ -92,24 +92,24 @@ const NavBar = () => {
           <MenuItem label="HOME" href="/" isScrolled={isScrolled} />
           <MenuItem label="SERVICES" href="/services" dropdown isScrolled={isScrolled}>
             <li>
-              <Link href="/services/consulting" className="hover:text-gray-300">
+              <Link href="/services/consulting" className="hover:text-gray-300 text-[16px]">
                 Consulting
               </Link>
             </li>
             <li>
-              <Link href="/services/compliance" className="hover:text-gray-300">
+              <Link href="/services/compliance" className="hover:text-gray-300 text-[16px]">
                 Compliance
               </Link>
             </li>
           </MenuItem>
           <MenuItem label="PAGES" href="/pages" dropdown isScrolled={isScrolled}>
             <li>
-              <Link href="/about" className="hover:text-gray-300">
+              <Link href="/about" className="hover:text-gray-300 text-[16px]">
                 About Us
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="hover:text-red-300">
+              <Link href="/contact" className="hover:text-red-300 text-[16px]">
                 Contact
               </Link>
             </li>
@@ -127,7 +127,7 @@ const NavBar = () => {
               isScrolled ? "text-black" : "text-white"
             } hover:text-gray-500`}
           />
-          <button className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 font-bold text-xl">
+          <button className="text-[16px] bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 font-bold text-xl">
             FREE QUOTE
           </button>
         </div>

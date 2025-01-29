@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-gray-300 text-black py-8">
+    <footer className="bg-[#fff] text-black py-8">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About Kargon */}
@@ -50,10 +50,10 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Subscribe with us"
-                  className="px-4 py-2 rounded-full w-full text-black"
+                  className="px-4 py-2 rounded-full w-full text-black border"
                 />
-                <button type="submit" className="px-6 py-2 bg-primary text-black rounded-full hover:bg-primary-dark">
-                  Subscribe Now
+                <button type="submit" className="px-6 border bg-red-600 text-white py-2 bg-primary text-black rounded-full hover:bg-primary-dark">
+                  Subscribe
                 </button>
               </div>
             </form>
