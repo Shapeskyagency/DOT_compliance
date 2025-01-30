@@ -52,7 +52,7 @@ const Footer = () => {
                   placeholder="Subscribe with us"
                   className="px-4 py-2 rounded-full w-full text-black border"
                 />
-                <button type="submit" className="px-6 border bg-red-600 text-white py-2 bg-primary text-black rounded-full hover:bg-primary-dark">
+                <button type="submit" className="px-6 border bg-red-600  py-2 bg-primary text-black rounded-full hover:bg-primary-dark">
                   Subscribe
                 </button>
               </div>
