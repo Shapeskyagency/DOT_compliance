@@ -1,18 +1,17 @@
 'use client'
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import ThreeTileCard from "../components/ThreeTileCard";
-import Banner from "../components/Banner";
-import FiftyFifty from "@/components/FiftyFifty";
-import ServicesCards from "../components/ServicesCards";
-import LogisticsWorkflow from "../components/LogisticsWorkflow";
-import ProductsTransport from "@/components/ProductsTransport";
-import TransportSection from "@/components/TransportSection";
-import UpdatedArticles from "@/components/UpdatedArticles";
-import Fullbanner from "@/components/Fullbanner";
-import SupervisorTrainingSection from "@/components/SupervisorTrainingSection ";
 import Lenis from 'lenis';
 import { useEffect } from 'react';
+import RevolutionSlider from '@/components/RevolutionSlider';
+import Service from '@/components/Service';
+import AboutUs from '@/components/AboutUs';
+import Ihbox from '@/components/Ihbox';
+import Services2 from '@/components/Service2';
+import History from '@/components/History';
+import Testimonials from '@/components/Testimonials';
+import Clients from '@/components/Clients';
+import BlogSection from '@/components/BlogSection';
 
 export default function Home() {
 
@@ -27,28 +26,18 @@ useEffect(() => {
 }, [])
   return (
     <div>
-      <Banner />
-      {/* <ThreeTileCard /> */}
+      
       <AnimatedSection>
-        <FiftyFifty />
+      <RevolutionSlider/>
       </AnimatedSection>
-      <AnimatedSection>
-        <ServicesCards />
-      </AnimatedSection>
-      <AnimatedSection>
-        <Fullbanner bgImg={'https://www.commercialtrucktrader.com/blog/wp-content/uploads/sites/9/2023/11/How-Will-AI-Impact-the-Future-of-Truck-Drivers.jpg'} />
-      </AnimatedSection>
-      <AnimatedSection>
-        <LogisticsWorkflow />
-      </AnimatedSection>
-      <AnimatedSection>
-        <SupervisorTrainingSection />
-      </AnimatedSection>
-      <AnimatedSection>
-        <TransportSection />
-      </AnimatedSection>
-      {/* <ProductsTransport /> */}
-      {/* <UpdatedArticles /> */}
+      <Service/>
+      <AboutUs/>
+      <Ihbox/>
+      <Services2/>
+      <History/>
+      <Testimonials/>
+      <Clients/>
+      <BlogSection/>
     </div>
   );
 }

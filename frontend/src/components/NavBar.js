@@ -1,139 +1,124 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { FaSearch } from "react-icons/fa"; 
-import { useState, useEffect } from "react";
+import { useState } from 'react';
+import Link from 'next/link';
+import { Menu, X } from 'lucide-react';
 
-const MenuItem = ({ label, href, dropdown = false, children = null, isScrolled }) => {
-  const [showDropdown, setShowDropdown] = useState(false);
-
-  return (
-    <li className="relative">
-      <button
-        className={`text-[16px] font-bold transition-all duration-300 ${
-          isScrolled ? "text-black" : "text-white"
-        } hover:text-red-500`}
-        onClick={() => dropdown && setShowDropdown(!showDropdown)}
-        onMouseEnter={() => dropdown && setShowDropdown(true)}
-        onMouseLeave={() => dropdown && setShowDropdown(false)}
-      >
-        <Link href={href}>{label}</Link>
-      </button>
-
-      {dropdown && showDropdown && (
-        <ul className="absolute top-full left-0 bg-gray-700 text-white p-2 space-y-2 shadow-lg">
-          {children}
-        </ul>
-      )}
-    </li>
-  );
-};
-
-const NavBar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  // Handle Scroll Event
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav
-      className={`fixed z-[999] w-[100%] transition-all duration-300 border-b-[1px] border-[#fbfbfb] border-opacity-30 ${
-        isScrolled ? "bg-white shadow-lg" : "bg-transparent"
-      }`}
-    >
-      <div className="container mx-auto flex justify-between items-center p-4 py-2">
-        {/* Logo */}
-        <Link href="/">
-          <img src="/logo.png" alt="Logo" className="h-20 w-auto" />
-        </Link>
+    <header className="site-header header-style-7">
+      <div className="container-fluid g-0">
+        <div className="site-header-menu d-flex justify-content-between align-items-center">
+          {/* Logo */}
+          <div className="site-branding">
+            <h1 className="site-title">
+              <Link href="/">
+                <img width={250} className="logo-img" style={{maxHeight:300}} src="/logo.png" alt="AttorCO" />
+              </Link>
+            </h1>
+          </div>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          className={`lg:hidden ${isScrolled ? "text-black" : "text-white"}`}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
+          {/* Top Bar */}
+          <div className="pbmit-menu-topbararea">
+            <div className="pre-header">
+              <div className="pbmit-pre-header-inner">
+                <div className="container">
+                  <div className="pbmit-table pbmit-pre-header-content">
+                    {/* <div className="pbmit-table-cell">
+                      <ul className="top-contact">
+                        <li><Link href="#">News</Link></li>
+                        <li><Link href="#">About Us</Link></li>
+                        <li><Link href="#">Contact Us</Link></li>
+                        <li><Link href="#">Careers Solutions</Link></li>
+                      </ul>
+                    </div> */}
+                    <div className="pbmit-table-cell pbmit-align-right">
+                      <div className="pbmit-social-links-wrapper">
+                        <ul className="social-icons">
+                          <li className="pbmit-social-facebook">
+                            <a className="tooltip-top" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/">
+                              <i className="pbmit-base-icon-facebook"></i>
+                            </a>
+                          </li>
+                          <li className="pbmit-social-twitter">
+                            <a className="tooltip-top" target="_blank" rel="noopener noreferrer" href="#">
+                              <i className="pbmit-base-icon-twitter"></i>
+                            </a>
+                          </li>
+                          <li className="pbmit-social-flickr">
+                            <a className="tooltip-top" target="_blank" rel="noopener noreferrer" href="#">
+                              <i className="pbmit-base-icon-flickr"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="pbmit-header-btn">
+                        <Link className="pbmit-btn pbmit-btn-global" href="/contacts">
+                          <span>Get in Touch</span>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-        {/* Navigation Links */}
-        <ul
-          className={`lg:flex space-x-8 lg:space-x-8 items-center ${
-            isMobileMenuOpen ? "block" : "hidden"
-          } lg:block`}
-        >
-          <MenuItem label="HOME" href="/" isScrolled={isScrolled} />
-          <MenuItem label="SERVICES" href="/services" dropdown isScrolled={isScrolled}>
-            <li>
-              <Link href="/services/consulting" className="hover:text-gray-300 text-[16px]">
-                Consulting
-              </Link>
-            </li>
-            <li>
-              <Link href="/services/compliance" className="hover:text-gray-300 text-[16px]">
-                Compliance
-              </Link>
-            </li>
-          </MenuItem>
-          <MenuItem label="PAGES" href="/pages" dropdown isScrolled={isScrolled}>
-            <li>
-              <Link href="/about" className="hover:text-gray-300 text-[16px]">
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="hover:text-red-300 text-[16px]">
-                Contact
-              </Link>
-            </li>
-          </MenuItem>
-          <MenuItem label="PROJECTS" href="/projects" isScrolled={isScrolled} />
-          <MenuItem label="BLOG" href="/blog" isScrolled={isScrolled} />
-          <MenuItem label="CONTACT" href="/contact" isScrolled={isScrolled} />
-        </ul>
+            {/* Navigation */}
+            <div className="site-navigations d-flex justify-content-between">
+              <nav className="main-menu navbar-expand-xl navbar-light">
+                <div className="navbar-header">
+                  {/* Toggle Button */}
+                  <button className="navbar-toggler" onClick={() => setIsOpen(!isOpen)}>
+                    {isOpen ? <X size={24} /> : <Menu size={24} />}
+                  </button>
+                </div>
+                <div className={`pbmit-mobile-menu-bg ${isOpen ? 'show' : ''}`}></div>
+                <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`} id="pbmit-menu">
+                  <div className="pbmit-menu-wrap">
+                    <ul className="navigation clearfix">
+                      <li className="dropdown active">
+                        <Link href="/">News</Link>
+                      </li>
+                      <li className="dropdown">
+                        <Link href="#">About Us</Link>
+                      </li>
+                      <li className="dropdown">
+                        <Link href="#">Contact Us</Link>
+                      </li>
+                      <li className="dropdown">
+                        <Link href="/practice-areas">Careers Solutions</Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
 
-        {/* Search Icon and Button */}
-        <div className="hidden lg:flex items-center space-x-4">
-          {/* 🔍 Dynamic Search Icon */}
-          <FaSearch
-            className={`text-lg cursor-pointer transition-all duration-300 ${
-              isScrolled ? "text-black" : "text-white"
-            } hover:text-gray-500`}
-          />
-          <button className="text-[16px] bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 font-bold text-xl">
-            FREE QUOTE
-          </button>
+              {/* Contact Info */}
+              <div className="pbmit-right-side">
+                <div className="info-widget">
+                  <div className="info-widget-inner">
+                    <div className="media-top">
+                      <i className="pbmit-base-icon-phone-call"></i>
+                      <h4>Call us: +1-(302)-520-2246</h4>
+                    </div>
+                  </div>
+                </div>
+                <div className="info-widget">
+                  <div className="info-widget-inner">
+                    <div className="media-top">
+                      <i className="pbmit-base-icon-location-pin"></i>
+                      <h4>8 THE GRN STE A, Dover, DE 19901-3618</h4>
+                    </div>
+                  </div>
+                </div>
+             
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </nav>
+    </header>
   );
-};
-
-export default NavBar;
+}
