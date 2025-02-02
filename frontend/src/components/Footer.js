@@ -19,7 +19,7 @@ const Footer = () => {
                   <div className="pbmit-footer-contact-info-inner">
                     <i className="pbmit-base-icon-mail"></i>
                     <span className="pbmit-label">Email</span> 
-                    <a href="mailto:support@mydotcabinet.com"><span>support@mydotcabinet.com</span></a>
+                    <a href="mailto:support@mydotcabinet.com"><span> support@mydotcabinet.com</span></a>
                   </div>
                 </div>
               </div>

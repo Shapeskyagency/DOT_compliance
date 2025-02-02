@@ -26,7 +26,6 @@ useEffect(() => {
 }, [])
   return (
     <div>
-      
       <AnimatedSection>
       <RevolutionSlider/>
       </AnimatedSection>

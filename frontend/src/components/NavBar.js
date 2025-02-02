@@ -82,10 +82,10 @@ export default function Navbar() {
                         <Link href="/">News</Link>
                       </li>
                       <li className="dropdown">
-                        <Link href="#">About Us</Link>
+                        <Link href="/about-us">About Us</Link>
                       </li>
                       <li className="dropdown">
-                        <Link href="#">Contact Us</Link>
+                        <Link href="/contact-us">Contact Us</Link>
                       </li>
                       <li className="dropdown">
                         <Link href="/practice-areas">Careers Solutions</Link>
