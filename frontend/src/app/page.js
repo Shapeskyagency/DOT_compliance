@@ -36,7 +36,7 @@ useEffect(() => {
       <History/>
       <Testimonials/>
       <Clients/>
-      <BlogSection/>
+      {/* <BlogSection/> */}
     </div>
   );
 }

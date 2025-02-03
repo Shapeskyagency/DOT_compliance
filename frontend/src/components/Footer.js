@@ -1,4 +1,23 @@
+import Link from "next/link";
+
 const Footer = () => {
+
+  const services = [
+    "Driver Management Services",
+    "Fleet Management Services",
+    "Compliance Review",
+    "New USDOT Number",
+    "U.C.R.",
+    "SCAC",
+    "Clearinghouse",
+    "Biennual Update",
+    "Operating Authority",
+    "Drug & Alcohol Consortium",
+    "NON-DOT Drug Testing",
+    "Carb Cert"
+  ];
+
+  
   return (
     <>
       {/* Footer */}
@@ -45,7 +64,7 @@ const Footer = () => {
               <div className="pbmit-footer-widget-col-1">
                 <div className="widget">
                   <div className="footerlogo">
-                    <img className="img-fluid" src="/logo.png" alt="Logo" />
+                    <img className="img-fluid" src="/images/logoWhite.png" alt="Logo" />
                   </div>
                   <p className="pbmit-footer-text">
                   DOT compliance is more than just regulations—it’s the foundation of a safe, reliable, and scalable business. Let MY D.O.T. CABINET LLC be your compliance partner on the road to success.
@@ -79,7 +98,7 @@ const Footer = () => {
               </div>
 
               {/* Latest News */}
-              <div className="pbmit-footer-widget-col-3">
+              {/* <div className="pbmit-footer-widget-col-3">
                 <div className="widget">
                   <h3 className="widget-title">Latest News</h3>
                   <ul className="pbmit-recent-post-list">
@@ -99,18 +118,17 @@ const Footer = () => {
                     </li>
                   </ul>
                 </div>
-              </div>
+              </div> */}
 
               {/* Our Services */}
-              <div className="pbmit-footer-widget-col-4">
+              <div className="pbmit-footer-widget-col-4 w-50">
                 <div className="widget">
                   <h3 className="widget-title">Our Services</h3>
                   <div className="pbmit-footermenu-wrapper">
-                    <ul>
-                      <li><a href="#">News</a></li>
-                      <li><a href="#">About Us</a></li>
-                      <li><a href="#">Contact Us</a></li>
-                      <li><a href="#">Careers Solutions</a></li>
+                    <ul className="grids_Style">
+                      {services.map((service, index) => (
+                        <li key={index}><Link href="#">{service}</Link></li>
+                      ))}
                     </ul>
                   </div>
                 </div>

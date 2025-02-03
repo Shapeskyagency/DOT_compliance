@@ -65,12 +65,12 @@ function AboutUs() {
                         </figure>
                       </div>
                     </div>
-                    <div className="col-8 col-lg-5">
+                    {/* <div className="col-8 col-lg-5">
                       <figure>
                         <img src="images/homepage-7/sign.png" className="img-fluid" alt="Signature" />
                       </figure>
                       <h5>Michael Phillips</h5>
-                    </div>
+                    </div> */}
                     <div className="col-12 col-lg-5">
                       <a href="about-us.html" className="pbmit-btn pbmit-btn-global">
                         Get Touch <i className="themifyicon ti-arrow-right"></i>

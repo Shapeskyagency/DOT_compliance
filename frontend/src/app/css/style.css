@@ -2111,6 +2111,12 @@ label.error {
 	font-size: 12px;
 	margin-top: 24px;
 }
+.grids_Style
+{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 100%;
+}
 
 @media (min-width:1200px) {
 	.pbmit-post-item{

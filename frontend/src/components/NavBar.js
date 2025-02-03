@@ -55,7 +55,7 @@ export default function Navbar() {
                         </ul>
                       </div>
                       <div className="pbmit-header-btn">
-                        <Link className="pbmit-btn pbmit-btn-global" href="/contacts">
+                        <Link className="pbmit-btn pbmit-btn-global" href="/contact-us">
                           <span>Get in Touch</span>
                         </Link>
                       </div>
@@ -88,7 +88,16 @@ export default function Navbar() {
                         <Link href="/contact-us">Contact Us</Link>
                       </li>
                       <li className="dropdown">
-                        <Link href="/practice-areas">Careers Solutions</Link>
+                        <Link href="/practice-areas">Fleet Management Service</Link>
+                        <ul>
+													<li class="active"><a href="index.html">New DOT</a></li>
+													<li class="active"><a href="index.html">U.R.C</a></li>
+													<li class="active"><a href="index.html">SCAC</a></li>
+													<li class="active"><a href="index.html">BIENNUAL UPDATE</a></li>
+													<li class="active"><a href="index.html">OPERATING AUTHORITY</a></li>
+													<li class="active"><a href="index.html">DRUG & ALCOHOL CONSORTIUM</a></li>
+													<li class="active"><a href="index.html">CARB CERT</a></li>
+												</ul>
                       </li>
                     </ul>
                   </div>
