@@ -78,8 +78,8 @@ export default function Navbar() {
                 <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`} id="pbmit-menu">
                   <div className="pbmit-menu-wrap">
                     <ul className="navigation clearfix">
-                      <li className="dropdown active">
-                        <Link href="/">News</Link>
+                      <li className="dropdown ">
+                        <Link href="/new">News</Link>
                       </li>
                       <li className="dropdown">
                         <Link href="/about-us">About Us</Link>
@@ -90,13 +90,13 @@ export default function Navbar() {
                       <li className="dropdown">
                         <Link href="/practice-areas">Fleet Management Service</Link>
                         <ul>
-													<li class="active"><a href="index.html">New DOT</a></li>
-													<li class="active"><a href="index.html">U.R.C</a></li>
-													<li class="active"><a href="index.html">SCAC</a></li>
-													<li class="active"><a href="index.html">BIENNUAL UPDATE</a></li>
-													<li class="active"><a href="index.html">OPERATING AUTHORITY</a></li>
-													<li class="active"><a href="index.html">DRUG & ALCOHOL CONSORTIUM</a></li>
-													<li class="active"><a href="index.html">CARB CERT</a></li>
+													<li class="active"><Link href="/new-dot">New DOT</Link></li>
+													<li class="active"><Link href="/urc">U.R.C</Link></li>
+													<li class="active"><Link href="/scac">SCAC</Link></li>
+													<li class="active"><Link href="/biennual-update">BIENNUAL UPDATE</Link></li>
+													<li class="active"><Link href="/operating-authority">OPERATING AUTHORITY</Link></li>
+													<li class="active"><Link href="/durga-alcohol-consortium">DRUG & ALCOHOL CONSORTIUM</Link></li>
+													<li class="active"><Link href="/carn-cert">CARB CERT</Link></li>
 												</ul>
                       </li>
                     </ul>
